@@ -66,6 +66,17 @@ void main() {
       endsWith('child: Hello World'),
     ]);
   });
+
+  test('timestamp should override the default', () {
+    final buffer = <String>[];
+    new Logger(
+      destinations: [new ListSink(buffer)],
+      timestamp: () => new DateTime.utc(2017),
+    ).log('Hello World', severity: Severity.warning);
+    expect(buffer, [
+      '[warning @ 0:0:0] Hello World',
+    ]);
+  });
 }
 
 /// Simply returns [Record.payload] with `toString()`.

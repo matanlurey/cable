@@ -110,11 +110,9 @@ String _defaultFormatter(Record<Object> record) {
     ..write(':')
     ..write(timestamp.minute)
     ..write(':')
-    ..write(timestamp.second)
-    ..write(':')
-    ..write(timestamp.millisecond);
-  final name = record.origin;
-  return '[${record.severity} @ $timeFormat] $name: ${record.payload}';
+    ..write(timestamp.second);
+  final name = record.origin != null ? ' ${record.origin}:' : '';
+  return '[${record.severity} @ $timeFormat]$name ${record.payload}';
 }
 
 /// Common and simple implementations of [Sink<Record>].
