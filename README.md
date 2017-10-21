@@ -15,7 +15,14 @@
 </p>
 
 The `cable` package provides a re-usable interface for logging and defining
-custom logging _destinations_, such as file I/O, remote web services, and more.
+custom logging _destinations_, such as:
+
+* in-memory
+* terminals
+* file I/O
+* remote web services
+
+... and more.
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -201,9 +208,7 @@ changes (like documentation, minor bug fixes), just send a pull request.
 
 ### Testing
 
-All pull requests are validated against [travis][travis], and must pass. The
-`build_runner` package lives in a mono repository with other `build` packages,
-and _all_ of the following checks must pass for _each_ package.
+All pull requests are validated against [travis][travis], and must pass.
 
 Ensure code passes all our [analyzer checks][analysis_options]:
 
